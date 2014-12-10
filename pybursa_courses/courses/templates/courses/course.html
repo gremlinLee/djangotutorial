@@ -1,0 +1,86 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "dist/css/bootstrap.min.css" %}' rel="stylesheet">
+    <script src='{% static "dist/js/bootstrap.js" %}'></script>
+</head>
+
+<body>
+<h3 style="margin-left: 5px"><a href="/courses"><span class="label label-default">Courses</span></a></h3>
+
+<h3 style="margin-left: 5px"><span class="label label-default">Course</span></h3>
+
+<div style="float: left; margin-left: 5px;">
+    {% if course %}
+        {% if course.language == 'Python' %}
+            <div style="border: 1px solid #000000;
+        border-radius: 10px;
+        padding: 10px; background-color: #dcdcdc">
+                <img src="{% static 'img/python.png' %}" style="width: 150px"/>
+            </div>
+        {% elif course.language == 'JavaScript' %}
+            <div style="border: 1px solid #000000;
+        border-radius: 10px;
+        padding: 10px; background-color: #dcdcdc">
+                <img src="{% static 'img/js.png' %}" style="width: 150px"/>
+            </div>
+        {% elif course.language == 'Ruby' %}
+            <div style="border: 1px solid #000000;
+        border-radius: 10px;
+        padding: 10px; background-color: #dcdcdc">
+                <img src="{% static 'img/ruby.png' %}" style="width: 150px"/>
+            </div>
+        {% else %}
+            <div style="border: 1px solid #000000;
+        border-radius: 10px;
+        padding: 10px; background-color: #dcdcdc">
+                <img src="{% static 'img/languages.jpg' %}" style="width: 150px"/>
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+
+<ul class="list-group" style="float: left; margin-left: 5px; width: 500px;">
+    <li class="list-group-item">
+        <span class="badge">{{ course.name }}</span>
+        Name
+    </li>
+    <li class="list-group-item">
+        <span class="badge">{{ course.language }}</span>
+        Language
+    </li>
+    <li class="list-group-item">
+        <span class="badge">{{ course.description }}</span>
+        Description
+    </li>
+    <li class="list-group-item">
+        <span class="badge">{{ course.coach }}</span>
+        Coach
+    </li>
+    <li class="list-group-item">
+        <span class="badge">{{ course.assistant }}</span>
+        Assistant
+    </li>
+    <li class="list-group-item">
+        <span class="badge">{{ course.date_of_beginning }}</span>
+        Date of beginning
+    </li>
+    <li class="list-group-item">
+        <span class="badge">{{ course.date_of_finishing }}</span>
+        Date of finishing
+    </li>
+</ul>
+
+</body>
+</html>

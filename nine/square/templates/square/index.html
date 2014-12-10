@@ -1,0 +1,67 @@
+{% load static %}<!DOCTYPE html>
+<!-- saved from url=(0050)http://getbootstrap.com/examples/starter-template/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "dist/css/bootstrap.min.css" %}' rel="stylesheet">
+    <script src='{% static "dist/js/bootstrap.js" %}'></script>
+</head>
+
+<body>
+<h3 style="margin-left: 5px"><span class="label label-default">Welcome to Square Application</span></h3>
+
+<div style="margin-left: 5px">
+    <h3><span class="label label-primary">Here you can solve quadratic equation.
+        Please enter a, b, c.</span></h3>
+</div>
+
+<div style="margin-left: 5px">
+    <form name="quadratic_equation" method="get" action="">
+        <div style="width: 40%; margin: 5px" class="input-group">
+            <span class="input-group-addon">a</span>
+            <input type="text" name="a" class="form-control" placeholder="Please enter a">
+        </div>
+        <div style="width: 40%; margin: 5px" class="input-group">
+            <span class="input-group-addon">b</span>
+            <input type="text" name="b" class="form-control" placeholder="Please enter b">
+        </div>
+        <div style="width: 40%; margin: 5px" class="input-group">
+            <span class="input-group-addon">c</span>
+            <input type="text" name="c" class="form-control" placeholder="Please enter c">
+        </div>
+        <input type="submit"/>
+    </form>
+</div>
+
+{% if answer %}
+<p style="margin-left: 5px">
+    <strong>Answer:</strong>
+    {% if answer.allisright %}
+    x1 = ({{answer.allisright.x1}}),
+    x2 = ({{answer.allisright.x2}})
+    {% endif %}
+    {% if answer.error %}
+        {{answer.error}}
+    {% endif %}
+</p>
+{% endif %}
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>-->
+
+
+</body>
+</html>
