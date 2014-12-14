@@ -11,3 +11,6 @@ class Course(models.Model):
     date_of_beginning = models.DateField()
     date_of_finishing = models.DateField()
     venue = models.ForeignKey('additional.Address')
+
+    def __unicode__(self):
+        return self.name + "(" + self.name + ")"

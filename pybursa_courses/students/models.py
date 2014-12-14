@@ -13,3 +13,6 @@ class Student(models.Model):
     phone = models.CharField(max_length=15)
     package = models.CharField(max_length=15)
     dossier = models.OneToOneField(Dossier)
+
+    def __unicode__(self):
+        return self.name + " " + self.surname

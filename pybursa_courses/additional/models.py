@@ -12,9 +12,15 @@ class Address(models.Model):
     street = models.CharField(max_length=30)
     house = models.PositiveSmallIntegerField()
 
+    def __unicode__(self):
+        return self.country + ", " + self.region + ", " + self.street + " " + str(self.house)
+
 
 class Dossier(models.Model):
 
     address = models.ForeignKey(Address)
     unliked_courses = models.ManyToManyField(Course, blank=True)
     liked_color = models.CharField(max_length=20)
+
+    def __unicode__(self):
+        return str(self.address) + " " + self.liked_color

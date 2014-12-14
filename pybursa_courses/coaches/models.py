@@ -17,3 +17,6 @@ class Coach(models.Model):
     role = models.CharField(max_length=20, choices=COACH_CHOISE)
     user = models.ForeignKey(User)
     dossier = models.OneToOneField(Dossier, blank=True)
+
+    def __unicode__(self):
+        return self.first_name + " " + self.last_name + "(" + self.role + ")"
