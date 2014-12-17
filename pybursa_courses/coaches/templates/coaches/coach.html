@@ -1,65 +1,7 @@
-{% load static %}
-{% load filter %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+{% extends "pybursa/index.html" %}
 
-    <title>Starter Template for Bootstrap</title>
+{% block title %}Coach{% endblock %}
 
-    <!-- Bootstrap core CSS -->
-    <link href='{% static "dist/css/bootstrap.min.css" %}' rel="stylesheet">
-    <script src='{% static "dist/js/bootstrap.js" %}'></script>
-</head>
-
-<body>
-<h3 style="margin-left: 5px"><a href="/coaches"><span class="label label-default">Coaches</span></a></h3>
-
-<h3 style="margin-left: 5px"><span class="label label-default">Coach</span></h3>
-
-<div style="float: left; margin-left: 5px;">
-    {% if coach %}
-        <div style="border: 1px solid #000000; border-radius: 10px; padding: 10px; background-color: #dcdcdc">
-            <img src="{% static 'img/coach.jpg' %}" style="width: 150px"/>
-        </div>
-    {% endif %}
-</div>
-
-<ul class="list-group" style="float: left; margin-left: 5px; width: 300px;">
-    <li class="list-group-item">
-        <span class="badge">{{ coach.first_name }}</span>
-        First name
-    </li>
-    <li class="list-group-item">
-        <span class="badge">{{ coach.last_name }}</span>
-        Last name
-    </li>
-    <li class="list-group-item">
-        <span class="badge">{{ coach.course }}</span>
-        Course
-    </li>
-    <li class="list-group-item">
-{#    {% ifequal user.pk comment.user_id %}#}
-{#    ...#}
-{#{% endifequal %}#}
-    {{ coach.lector }}
-        {% if couch.lector == True %}
-            <span class="glyphicon glyphicon-ok" style="float: right;"></span>
-        {% else %}
-            <span class="glyphicon glyphicon-remove" style="float: right;"></span>
-        {% endif %}
-        Lector
-    {% comment %}</li>
-        <span class="badge">{{ coach.lector }}</span>
-        Lector{% endcomment %}
-    </li>
-</ul>
-
-</body>
-</html>
+{% block content %}
+    {% include "coaches/concrete_coach.html" %}
+{% endblock %}

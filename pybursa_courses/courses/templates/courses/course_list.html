@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Avialable courses</div>
+  <table class="table">
+      <tr>
+          <th>Name</th>
+          <th>Date of beginning</th>
+          <th>Date of finishing</th>
+      </tr>
+      {% for course in course_list %}
+          <tr>
+            <td><a href="/courses/{{ course.id }}">{{ course.name }}</a></td>
+            <td>{{ course.date_of_beginning }}</td>
+            <td>{{ course.date_of_finishing }}</td>
+          </tr>
+    {% endfor %}
+  </table>
+</div>

@@ -1,0 +1,9 @@
+<ol class="list-group" style="">
+    {% for coach in coach_list %}
+        <li class="list-group-item">{{ forloop.counter }} {{ coach.first_name }} {{ coach.last_name }}
+            <a href="/coaches/{{ coach.id }}/">
+                <span class="glyphicon glyphicon-hand-right" title="Detail"></span>
+            </a>
+        </li>
+    {% endfor %}
+</ol>

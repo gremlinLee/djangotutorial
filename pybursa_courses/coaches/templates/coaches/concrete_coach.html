@@ -1,0 +1,22 @@
+<ul class="list-group" style="float: left; margin-left: 5px; width: 300px;">
+    <li class="list-group-item">
+        <span class="badge">{{ coach.first_name }}</span>
+        First name
+    </li>
+    <li class="list-group-item">
+        <span class="badge">{{ coach.last_name }}</span>
+        Last name
+    </li>
+    <li class="list-group-item">
+        <span class="badge">{{ coach.course }}</span>
+        Course
+    </li>
+    <li class="list-group-item">
+        {% if couch.lector == True %}
+            <span class="glyphicon glyphicon-ok" style="float: right;"></span>
+        {% else %}
+            <span class="glyphicon glyphicon-remove" style="float: right;"></span>
+        {% endif %}
+        Lector
+    </li>
+</ul>

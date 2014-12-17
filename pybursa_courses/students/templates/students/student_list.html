@@ -1,0 +1,7 @@
+{% for student in student_list %}
+        <li class="list-group-item">{{ student.name }} {{ student.surname }}
+            <a href="/students/{{ student.id }}/">
+                <span class="glyphicon glyphicon-hand-right" title="Detail"></span>
+            </a>
+        </li>
+    {% endfor %}

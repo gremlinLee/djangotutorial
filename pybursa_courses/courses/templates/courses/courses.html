@@ -1,43 +1,7 @@
-{% load static %}<!DOCTYPE html>
-<!-- saved from url=(0050)http://getbootstrap.com/examples/starter-template/ -->
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+{% extends "pybursa/index.html" %}
 
-    <title>Starter Template for Bootstrap</title>
+{% block title %}Courses{% endblock %}
 
-    <!-- Bootstrap core CSS -->
-    <link href='{% static "dist/css/bootstrap.min.css" %}' rel="stylesheet">
-    <script src='{% static "dist/js/bootstrap.js" %}'></script>
-</head>
-
-<body>
-<h3 style="margin-left: 5px"><span class="label label-default">Welcome to Course Application</span></h3>
-
-
-<div class="panel panel-default">
-  <div class="panel-heading">Avialable courses</div>
-  <table class="table">
-      <tr>
-          <th>Name</th>
-          <th>Date of beginning</th>
-          <th>Date of finishing</th>
-      </tr>
-      {% for course in course_list %}#}
-          <tr>
-            <td><a href="/courses/{{ course.id }}">{{ course.name }}</a></td>
-            <td>{{ course.date_of_beginning }}</td>
-            <td>{{ course.date_of_finishing }}</td>
-          </tr>
-    {% endfor %}
-  </table>
-</div>
-
-</body>
-</html>
+{% block content %}
+    {% include "courses/course_list.html" %}
+{% endblock %}
