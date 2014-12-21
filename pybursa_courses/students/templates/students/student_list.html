@@ -3,5 +3,7 @@
             <a href="/students/{{ student.id }}/">
                 <span class="glyphicon glyphicon-hand-right" title="Detail"></span>
             </a>
+            <a style="float: right" href="edit_student/{{ student.id }}">Edit student</a>
         </li>
     {% endfor %}
+<div style="margin-top: 10px"><a href="create_student">Create new student</a></div>
