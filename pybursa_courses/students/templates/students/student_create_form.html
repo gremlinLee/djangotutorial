@@ -1,0 +1,10 @@
+{% extends "pybursa/index.html" %}
+{% block title %}New student{% endblock %}
+
+{% block content %}
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit">
+    </form>
+{% endblock %}

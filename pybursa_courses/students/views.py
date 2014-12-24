@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.views import generic
+from django.views.generic.edit import CreateView
 from django import forms
 
 from students.models import Student
@@ -55,3 +56,9 @@ def concrete_student(request, student_id):
     return render(request, "students/student.html", {
         'student': student
     })
+
+
+class StudentCreateView(CreateView):
+    model = Student
+    fields = ['name', 'surname', 'date_of_birth', 'email', 'courses', 'phone', 'package', 'dossier']
+    template_name_suffix = '_create_form'
